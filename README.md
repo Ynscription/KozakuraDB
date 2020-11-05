@@ -1,19 +1,19 @@
 # Kozakura DB - A Kanji by Radicals SQLite Database
 
-KozakuraDB is a SQLite database file compiled from kanjidic2 and radkfile.
+KozakuraDB is a SQLite database file compiled from the [radkfile](http://nihongo.monash.edu//kradinf.html) and [kanjidic2](http://www.edrdg.org/wiki/index.php/KANJIDIC_Project) files.
 
-The database contains two tables:
-Kanji (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER)
-Rad (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER, kanji BLOB)
-
+## Structure
+The database contains three tables:  
+Kanji (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER)  
+Rad (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER)
 * id is the int32 scalar value of the UTF-8 encoding of the character.
 * lit is the utf8 encoded string of the character.
 * strokes is the number of strokes of the character in int32.
-* kanji is the list of kanji associated with the radical.
-	The format of the blob is a sequence of int32 values, used as id in the Kanji table.
-	Each value is the int32 scalar value of the UTF-8 encoding of a character.
-	The bytes of the int32 are stored in little-endian.
-	For example the Kanji 札 with id 0x00_00_67_2D will be stored as 0x2D_67_00_00
+KanjiByRad (rad INTEGER, kanji INTEGER, PRIMARY KEY(rad, kanji)
+* rad is the id of the radical
+* kanji is the id of the kanji
 
 
-This publication has included material from the JMdict (EDICT, etc.) dictionary files in accordance with the licence provisions of the Electronic Dictionaries Research Group. See http://www.edrdg.org/
+## License
+
+This publication has included material from the JMdict (EDICT, etc.) dictionary files in accordance with the licence provisions of the Electronic Dictionaries Research Group. See http://www.edrdg.org/edrdg/licence.html
