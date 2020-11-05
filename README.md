@@ -16,4 +16,6 @@ KanjiByRad (rad INTEGER, kanji INTEGER, PRIMARY KEY(rad, kanji)
 
 ## License
 
+This work is provided under a Creative Commons Attribution-ShareAlike Licence (V3.0). The Licence Deed can be viewed [here](https://creativecommons.org/licenses/by-sa/3.0/), and the full Licence Code is [here](https://creativecommons.org/licenses/by-sa/3.0/legalcode).
+
 This publication has included material from the JMdict (EDICT, etc.) dictionary files in accordance with the licence provisions of the Electronic Dictionaries Research Group. See http://www.edrdg.org/edrdg/licence.html
