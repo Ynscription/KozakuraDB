@@ -8,7 +8,8 @@ Kanji (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER)
 Rad (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER)
 * id is the int32 scalar value of the UTF-8 encoding of the character.
 * lit is the utf8 encoded string of the character.
-* strokes is the number of strokes of the character in int32.
+* strokes is the number of strokes of the character in int32.  
+
 KanjiByRad (rad INTEGER, kanji INTEGER, PRIMARY KEY(rad, kanji)
 * rad is the id of the radical
 * kanji is the id of the kanji
