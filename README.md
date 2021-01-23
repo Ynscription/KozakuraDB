@@ -5,10 +5,12 @@ KozakuraDB is a SQLite database file compiled from the [radkfile](http://nihongo
 ## Structure
 The database contains three tables:  
 Kanji (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER)  
-Rad (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER)
+Rad (id INTEGER PRIMARY KEY, lit TEXT, strokes INTEGER, entry INTEGER, symbol TEXT)
 * id is the int32 scalar value of the UTF-8 encoding of the character.
-* lit is the utf8 encoded string of the character.
+* lit is the UTF-8 encoded string of the character (or the kanji that best represents a radical that doesn't have a Japanese character).
 * strokes is the number of strokes of the character in int32.  
+* entry is the entry number of a radical in the RADKFILE
+* symbol is the UTF-8 encoded string of the radical (using non Japanese characters for those that don't have one).
 
 KanjiByRad (rad INTEGER, kanji INTEGER, PRIMARY KEY(rad, kanji)
 * rad is the id of the radical
